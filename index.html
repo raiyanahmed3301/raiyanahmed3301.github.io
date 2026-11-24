@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Raiyan Ahmed: Mission Control Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap">
+<style>
+:root{--bg:#0A0F1A;--bg2:#0d1520;--c:#00e5ff;--o:#ffb347;--g:#3dff8b;--r:#ff5d5d;--t:#cfe9ee;--m:#7f97a3;--bd:rgba(0,229,255,.32);--pn:rgba(10,15,26,.72);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=amber]{--bg:#120c04;--bg2:#1a1007;--c:#ffb347;--o:#ff7a1a;--t:#ffe2b8;--m:#a98b62;--bd:rgba(255,179,71,.35);--pn:rgba(18,12,4,.74)}
+:root[data-theme=green]{--bg:#04100a;--bg2:#071a0e;--c:#39ff7a;--o:#c8ff4a;--t:#c9f7d8;--m:#6a9a7c;--bd:rgba(57,255,122,.32);--pn:rgba(4,16,10,.74)}
+:root[data-theme=light]{--bg:#eef1f6;--bg2:#fff;--c:#0a7ea4;--o:#d2641a;--g:#0b8a4a;--r:#c62828;--t:#14202c;--m:#5d6b78;--bd:rgba(10,126,164,.4);--pn:rgba(255,255,255,.85);color-scheme:light}
+*,*:before,*:after{box-sizing:inherit}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(120% 100% at 50% 0,var(--bg2),var(--bg));color:var(--t);font:400 15px/1.55 "Share Tech Mono",ui-monospace,monospace;overflow:hidden}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.12) 50%) 0 0/100% 4px;opacity:.35}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:49;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.45))}
+[data-theme=light] body:after,[data-theme=light] body:before{opacity:.06}
+.app{display:grid;grid-template-columns:210px minmax(0,1fr) 310px;grid-template-rows:auto minmax(0,1fr);gap:12px;height:100svh;padding:12px}
+.pn{background:var(--pn);border:1px solid var(--bd);border-radius:8px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-shadow:0 0 18px color-mix(in srgb,var(--c) 14%,transparent)}
+h1,h2,h3{font-family:Orbitron,sans-serif;margin:0}
+header{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding:10px 16px}
+header h1{font-size:clamp(1rem,2.4vw,1.5rem);font-weight:900;letter-spacing:.12em;color:var(--c);text-shadow:0 0 12px color-mix(in srgb,var(--c) 70%,transparent)}
+header small{display:block;color:var(--m);font-size:.75rem;letter-spacing:.08em}
+.st{display:flex;gap:22px;align-items:center;flex-wrap:wrap}.st div{text-align:right;font-size:.7rem;color:var(--m)}.st b{display:block;font:700 1.05rem Orbitron;color:var(--o)}
+.led{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g);animation:bl 1.4s infinite;margin-right:.4rem}
+@keyframes bl{50%{opacity:.35}}
+.tb{font:inherit;color:var(--c);background:transparent;border:1px solid var(--bd);border-radius:4px;padding:.35rem .7rem;cursor:pointer}.tb:hover{background:color-mix(in srgb,var(--c) 18%,transparent)}
+nav{padding:12px;overflow:auto}
+nav h2{font-size:.8rem;letter-spacing:.2em;color:var(--m);margin-bottom:.6rem}
+nav button{display:flex;width:100%;gap:.6rem;align-items:center;font:inherit;color:var(--t);background:transparent;border:1px solid transparent;border-left:3px solid var(--bd);padding:.5rem .6rem;margin-bottom:.35rem;text-align:left;cursor:pointer;transition:.2s}
+nav button:hover,nav button.on{background:color-mix(in srgb,var(--c) 14%,transparent);border-color:var(--bd);border-left-color:var(--o);color:var(--c)}
+nav kbd{margin-left:auto;color:var(--m);font-size:.75rem}
+button:focus-visible,input:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+.term{display:flex;flex-direction:column;min-height:0}
+.term h2{font-size:.8rem;letter-spacing:.2em;color:var(--m);padding:10px 16px;border-bottom:1px solid var(--bd)}
+#out{flex:1;overflow:auto;padding:14px 16px;scroll-behavior:smooth}
+.ln{margin:0 0 .7rem}
+.p{color:var(--g)}.pr{color:var(--c)}.o{color:var(--o)}.m{color:var(--m)}.r{color:var(--r)}
+.ln h3{font-size:1rem;letter-spacing:.14em;color:var(--c);margin:.2rem 0 .5rem;text-shadow:0 0 10px color-mix(in srgb,var(--c) 60%,transparent)}
+.ln h3:before{content:"> ";color:var(--o)}
+.kv{display:grid;grid-template-columns:9rem 1fr;gap:.1rem 1rem}.kv span:nth-child(odd){color:var(--m)}
+.card{border:1px solid var(--bd);border-left:3px solid var(--o);padding:.6rem .9rem;margin:.5rem 0;background:color-mix(in srgb,var(--c) 5%,transparent)}
+.card b{color:var(--c)}.card small{color:var(--o)}
+.chips span{display:inline-block;border:1px solid var(--bd);padding:0 .5rem;margin:0 .35rem .35rem 0;color:var(--c)}
+.chips span:hover{background:var(--c);color:var(--bg)}
+a{color:var(--o)}
+.cmds button{font:inherit;color:var(--c);background:transparent;border:1px dashed var(--bd);padding:.1rem .6rem;margin:0 .4rem .4rem 0;cursor:pointer}.cmds button:hover{background:color-mix(in srgb,var(--c) 18%,transparent)}
+.inl{display:flex;gap:.6rem;align-items:center;border-top:1px solid var(--bd);padding:10px 16px}
+.inl label{color:var(--g);white-space:nowrap}
+#in{flex:1;min-width:0;font:inherit;color:var(--t);background:transparent;border:0;caret-color:var(--o)}
+#in:focus{outline:none}
+.sky{position:relative;height:13.5rem;overflow:hidden;border:1px solid var(--bd);margin:.6rem 0;background:#02050a}
+.sky pre{position:absolute;left:50%;bottom:0;margin:0 0 0 -3ch;color:var(--o);line-height:1.1;text-shadow:0 0 8px var(--o)}
+.side{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
+.side .pn{padding:12px 14px}
+.side h2{font-size:.78rem;letter-spacing:.2em;color:var(--m);margin-bottom:.5rem}
+canvas{display:block;width:100%}
+.g{display:grid;grid-template-columns:5.2rem 1fr 4.6rem;gap:.5rem;align-items:center;font-size:.8rem;margin:.28rem 0}.g i{display:block;height:8px;background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid var(--bd)}.g i u{display:block;height:100%;background:var(--c);box-shadow:0 0 8px var(--c);transition:width .8s}
+.g b{text-align:right;color:var(--o);font-weight:400}
+@media(max-width:1000px){body{overflow:auto}.app{display:block;height:auto}.app>*{margin-bottom:12px}nav{display:flex;gap:.4rem;overflow:auto;padding:8px}nav h2{display:none}nav button{width:auto;white-space:nowrap;margin:0}nav kbd{display:none}.term{height:72svh}.st div:nth-child(n+3){display:none}.kv{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.led{animation:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="pn">
+  <div><h1>A RAIYAN AHMED // MISSION CONTROL</h1><small>PORTFOLIO GROUND STATION ALPHA · CYBERSECURITY × AEROSPACE</small></div>
+  <div class="st">
+    <div><span class="led"></span>LINK<b id="lk">ONLINE</b></div>
+    <div>MISSION TIME<b id="mt">T+00:00:00</b></div>
+    <div>BANGALORE IST<b id="ist">--:--:--</b></div>
+    <button class="tb" id="th" aria-label="Change colour theme">THEME: CYAN</button>
+  </div>
+</header>
+
+<nav class="pn" aria-label="Subsystems"><h2>SUBSYSTEMS</h2></nav>
+
+<section class="pn term" aria-label="Terminal">
+  <h2>RAIYAN-OS TERMINAL · TYPE help</h2>
+  <div id="out" aria-live="polite"></div>
+  <div class="inl"><label for="in">visitor@raiyan:~$</label><input id="in" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="type a command, e.g. about" disabled></div>
+</section>
+
+<aside class="side" aria-label="Live telemetry">
+  <div class="pn"><h2>CANSAT ORBIT VIEW</h2><canvas id="sat" height="150"></canvas></div>
+  <div class="pn"><h2>THREAT RADAR</h2><canvas id="rad" height="240"></canvas></div>
+  <div class="pn"><h2>LIVE TELEMETRY <span class="m">(SIMULATED)</span></h2><div id="tel"></div></div>
+</aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion: reduce)').matches,wait=ms=>new Promise(r=>setTimeout(r,RM?0:ms));
+/* ---------- content ---------- */
+const kv=a=>`<div class="kv">${a.map(([k,v])=>`<span>${k}</span><span>${v}</span>`).join('')}</div>`;
+const card=(t,s,b)=>`<div class="card"><b>${t}</b> <small>${s}</small><br>${b}</div>`;
+const chips=a=>`<div class="chips">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
+const H=t=>`<h3>${t}</h3>`;
+const ROLES=[['May 2026 to now','PROPULSION SYSTEMS INTERN','Synodic Space Pvt. Ltd.','Rocket propulsion, design and performance analysis. MATLAB for calculations and simulations; OpenRocket for stability, trajectory and flight simulation.'],
+['Sept 2023 to Feb 2026','SATELLITE ANALYST','Vikasana, Bangalore','System performance analysis, calculation reviews and solid rocket motor modelling in OpenMotor. Team Vayuvega at CANSAT India.'],
+['Jun to Sep 2025','AZURE SECURITY ENGINEER INTERN','SITER Academy, Norway','Azure identity and access, security controls, threat protection and cloud governance. Evaluated solutions and analysed security requirements.'],
+['Jan 2023 to Aug 2025','CYBERSECURITY ANALYST','Vikasana, Bangalore','Vulnerability scans on servers and workstations. Researched emerging threats and recommended countermeasures.']];
+const PROJ=[['Threat_Intelligence_DB','IN PROGRESS','A secure platform that aggregates real-time indicators of compromise and adversary tactics.'],
+['CanSat India satellite','TEAM VAYUVEGA × VIKASANA','Deployable satellite: payload optimisation, trajectory calculation and analysis, atmospheric data collection for Mars-style missions.'],
+['Amateur rocket model','ONGOING','A personal build for fun and learning, using MATLAB, OpenRocket and OpenMotor.'],
+['Holo-AI healthcare assistant','LEAD RESEARCHER','AI plus holographic spatial computing to support diagnostics, patient interaction and data visualisation.'],
+['Malware and incident response lab','INDEPENDENT','Dynamic instrumentation, behavioural profiling, reverse engineering and ransomware simulations.'],
+['Solar power for AI data centres','SMART INDIA HACKATHON + ANVESHANA','Feasibility studies and scalable green-energy models for high-performance computing.']];
+const CERTS=['Completion, Entrepreneurship and Startup Training Program 2026, India Space Academy','Excellence, Speaker, International Mega Symposium 2026, SITER Academy, Norway','Appreciation, Research Presentation, SSITCON 2025','Appreciation, Research Presentation, ICITEB 2024','Appreciation, Top Projects, 5th Innovation Project Expo 2024, Presidency University','Recognition, Internal Anveshana Hackathon, Presidency University','Recognition, Internal Smart India Hackathon, Presidency University','Cybersecurity Workshop Conductor, UTAS-Muscat'];
+const CMD={
+about:()=>H('CREW FILE: A RAIYAN AHMED')+kv([['NAME','A Raiyan Ahmed'],['BASE','Bangalore, India (from Hindupur, Andhra Pradesh)'],['STUDYING','B.Tech Cyber Security, Presidency University (July 2027)'],['NOW','Propulsion Systems Intern, Synodic Space'],['FIELDS','Cybersecurity, rocketry, satellites'],['OFF DUTY','Nature, research, building things']])+`<p>I protect systems on Earth and build things that leave it. I analyse malware, run incident response drills and study Azure security. I also model rocket motors, analyse satellite data and fly CanSat missions. I’m an award-winning researcher who likes explaining hard ideas.</p>`,
+skills:()=>H('SKILL MODULES')+`<p class="o">// aerospace</p>`+chips(['Rocket propulsion','Solid motor modelling','Trajectory analysis','Stability analysis','Flight simulation','Satellite payloads'])+`<p class="o">// cybersecurity</p>`+chips(['Malware analysis','Reverse engineering','Incident response','Ransomware simulation','Vulnerability scanning','Threat intelligence','Digital forensics','Ethical hacking','Endpoint defense'])+`<p class="o">// cloud</p>`+chips(['Microsoft Azure','Identity and access','Threat protection','Cloud governance'])+`<p class="o">// tools and craft</p>`+chips(['MATLAB','OpenRocket','OpenMotor','Paper writing','Public speaking','Startup training']),
+experience:()=>H('MISSION LOG')+ROLES.map(r=>card(r[1],r[0],`${r[2]}<br><span class="m">${r[3]}</span>`)).join(''),
+projects:()=>H('PAYLOAD BAY: PROJECTS')+PROJ.map(p=>card(p[0],p[1],`<span class="m">${p[2]}</span>`)).join(''),
+research:()=>H('RESEARCH ARCHIVE')+card('“A New Era of Holo-AI”','ICITEB 2024 · BEST RESEARCH PAPER AWARD','<span class="m">With R. Khan, A. Sharma, M. R. Khan and M. M. U. Faiz.</span>')+card('“Elunor AI: A Next-Generation Framework for Personalized and Private AI Agents”','SSITCON 2025 · BEST RESEARCH PAPER AWARD','<span class="m">With A. Sharma, M. R. Khan and M. M. U. Faiz.</span>')+card('Speaking','INTERNATIONAL','International Mega Symposium 2026 (SITER Academy, Norway). Cybersecurity workshop for university students at UTAS-Muscat.'),
+certs:()=>H('MEDALS AND CERTIFICATES')+CERTS.map(c=>`<div class="ln">★ ${c}</div>`).join(''),
+education:()=>H('TRAINING RECORD')+card('B.TECH IN CYBER SECURITY','EXPECTED JULY 2027','Presidency University, Bangalore')+card('HIGH SCHOOL, SCIENCE AND MATHEMATICS','MAY 2023','Narayana Jr. College, Hindupur'),
+languages:()=>H('COMMS CHANNELS')+kv([['ENGLISH','Advanced'],['URDU','Native'],['HINDI','Intermediate'],['TELUGU','Conversational'],['ARABIC','Beginner']]),
+contact:()=>H('OPEN A CHANNEL')+kv([['EMAIL','<a href="mailto:raiyanahmed3089@gmail.com">raiyanahmed3089@gmail.com</a>'],['LOCATION','Bangalore, Karnataka, India']])+`<p>Open to cybersecurity and aerospace roles, research, and early-stage ideas. Try <span class="pr">sudo hire raiyan</span>.</p>`,
+whoami:()=>`<span class="pr">visitor</span>: a curious explorer. Welcome aboard.`,
+help:()=>H('COMMANDS')+`<div class="cmds">${Object.keys(NAV).map(k=>`<button data-c="${k}">${k}</button>`).join('')}</div><p class="m">Also: theme, launch, scan, clear, whoami. Use Tab to autocomplete and the up arrow for history.</p>`
+};
+const NAV={about:'ABOUT ME',skills:'SKILLS',experience:'MISSION LOG',projects:'PROJECTS',research:'RESEARCH',certs:'CERTIFICATES',education:'EDUCATION',contact:'CONTACT'};
+const ALL=[...Object.keys(CMD),'theme','launch','scan','clear','sudo hire raiyan'];
+
+/* ---------- terminal engine ---------- */
+const out=$('#out'),inp=$('#in'),hist=[];let hi=0,busy=false;
+function print(html,cls=''){const d=document.createElement('div');d.className='ln '+cls;d.innerHTML=html;out.appendChild(d);if(!RM)anime({targets:d,opacity:[0,1],translateX:[-10,0],duration:320,easing:'easeOutQuad'});out.scrollTop=out.scrollHeight;return d}
+function setOn(c){document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.c===c))}
+const themes=['cyan','amber','green','light'];let ti=0;
+function theme(n){ti=n!=null?n:(ti+1)%4;document.documentElement.dataset.theme=themes[ti];$('#th').textContent='THEME: '+themes[ti].toUpperCase();cols()}
+async function run(raw){const cmd=raw.trim().toLowerCase();if(!cmd||busy)return;hist.push(cmd);hi=hist.length;
+  print(`<span class="p">visitor@raiyan:~$</span> ${cmd.replace(/</g,'&lt;')}`);
+  if(CMD[cmd]){print(CMD[cmd]());setOn(cmd);return}
+  if(cmd==='clear'){out.innerHTML='';return}
+  if(cmd.startsWith('theme')){const a=cmd.split(' ')[1],i=themes.indexOf(a);theme(i>-1?i:null);return print(`Display set to <span class="pr">${themes[ti]}</span>. Options: ${themes.join(', ')}.`)}
+  if(cmd==='scan'){busy=true;for(const l of ['Scanning 65535 ports on your connection...','Checking for malware signatures... none found','Inspecting cookies... none stored by this site','Threats found: <span class="p">0</span>. You are safe here.'])print(l),await wait(550);busy=false;return}
+  if(cmd==='launch'){busy=true;for(let i=5;i>0;i--){print(`<span class="o">T-${i}...</span>`);await wait(650)}
+    const box=print(`<div class="sky"><pre>   /\\\n  /  \\\n |    |\n | RA |\n |    |\n |____|\n /|  |\\\n/_|  |_\\\n  /\\/\\\n *    *\n  *  *</pre></div>`),pre=box.querySelector('pre');
+    if(!RM)await anime({targets:'.app',translateX:[0,-3,3,-2,2,0],duration:500,loop:2,easing:'linear'}).finished;
+    await anime({targets:pre,translateY:RM?0:-320,duration:RM?1:2600,easing:'easeInQuad'}).finished;
+    print('<span class="p">LIFTOFF!</span> Rocket clear of the tower. Altitude climbing. Now type <span class="pr">projects</span> to see what I build.');tel.alt+=350;busy=false;return}
+  if(cmd==='sudo hire raiyan'){print('[sudo] password for visitor: ********');await wait(500);return print('<span class="p">ACCESS GRANTED.</span> Excellent decision. <a href="mailto:raiyanahmed3089@gmail.com?subject=Let%27s%20work%20together">Open the email channel</a>')}
+  print(`<span class="r">command not found:</span> ${cmd.replace(/</g,'&lt;')}. Type <span class="pr">help</span>.`)}
+inp.addEventListener('keydown',e=>{if(e.key==='Enter'){run(inp.value);inp.value=''}
+  else if(e.key==='ArrowUp'){e.preventDefault();if(hi>0)inp.value=hist[--hi]}
+  else if(e.key==='ArrowDown'){e.preventDefault();if(hi<hist.length-1)inp.value=hist[++hi];else{hi=hist.length;inp.value=''}}
+  else if(e.key==='Tab'){e.preventDefault();const m=ALL.find(c=>c.startsWith(inp.value.toLowerCase()));if(m&&inp.value)inp.value=m}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b){run(b.dataset.c);if(innerWidth<=1000)$('.term').scrollIntoView({behavior:'smooth'})}else if(!getSelection().toString()&&!e.target.closest('a,button'))inp.focus({preventScroll:true})});
+const nav=$('nav');Object.entries(NAV).forEach(([k,v],i)=>{const b=document.createElement('button');b.dataset.c=k;b.innerHTML=`${v}<kbd>${i+1}</kbd>`;nav.appendChild(b)});
+addEventListener('keydown',e=>{if(document.activeElement===inp||e.ctrlKey||e.metaKey||e.altKey)return;const k=Object.keys(NAV)[+e.key-1];if(k)run(k)});
+$('#th').onclick=()=>{theme();print(`Display set to <span class="pr">${themes[ti]}</span>.`)};
+
+/* ---------- boot sequence ---------- */
+let skip=false;addEventListener('pointerdown',()=>skip=true,{once:true});addEventListener('keydown',()=>skip=true,{once:true});
+async function boot(){const d=()=>wait(skip?0:240);
+  for(const l of ['<span class="m">RAIYAN-OS v2026.11 · GROUND STATION ALPHA</span>','Initialising antenna array... <span class="p">OK</span>','Link established: Bangalore, India... <span class="p">OK</span>','Loading crew file: A RAIYAN AHMED... <span class="p">OK</span>'])print(l),await d();
+  const bar=print('Calibrating sensors <span class="pr">[<span id="pb">··········</span>]</span>'),pb=bar.querySelector('#pb'),o={v:0};
+  if(RM||skip)o.v=10;else await anime({targets:o,v:10,round:1,duration:900,easing:'linear',update:()=>pb.textContent='█'.repeat(o.v)+'·'.repeat(10-o.v)}).finished;
+  pb.textContent='██████████';
+  print('<span class="p">ALL SYSTEMS NOMINAL.</span> Welcome, visitor. Tap a subsystem on the left, or type <span class="pr">help</span>.');
+  inp.disabled=false;inp.focus({preventScroll:true});await wait(300);run('about')}
+
+/* ---------- live telemetry, radar, satellite ---------- */
+const tel={alt:0,temp:24,bat:100,rssi:-70,pk:0},TL=[['ALTITUDE','alt',1200,'m'],['TEMP','temp',40,'°C'],['BATTERY','bat',100,'%'],['RSSI','rssi',0,'dBm'],['PACKETS','pk',0,'']];
+$('#tel').innerHTML=TL.map(([n,k,,u])=>`<div class="g"><span>${n}</span><i><u id="b${k}" style="width:0"></u></i><b id="v${k}">--</b></div>`).join('');
+setInterval(()=>{tel.alt+=14+Math.random()*10;if(tel.alt>1200)tel.alt=0;tel.temp=24-tel.alt*.006+Math.random()*2;tel.bat-=.04;if(tel.bat<30)tel.bat=100;tel.rssi=-62-Math.random()*22;tel.pk++;
+  const v={alt:tel.alt.toFixed(0),temp:tel.temp.toFixed(1),bat:tel.bat.toFixed(1),rssi:tel.rssi.toFixed(0),pk:tel.pk},w={alt:tel.alt/12,temp:tel.temp/.4,bat:tel.bat,rssi:(tel.rssi+100)*2.5,pk:(tel.pk%100)};
+  TL.forEach(([n,k,,u])=>{$('#v'+k).textContent=v[k]+(u?' '+u:'');$('#b'+k).style.width=Math.min(100,Math.max(2,w[k]))+'%'})},1000);
+const t0=Date.now(),pad=n=>String(n).padStart(2,'0');
+setInterval(()=>{const s=Math.floor((Date.now()-t0)/1000);$('#mt').textContent=`T+${pad(s/3600|0)}:${pad(s%3600/60|0)}:${pad(s%60)}`;$('#ist').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Kolkata'})},1000);
+
+let CC='#0ff',CO='#fb4';function cols(){const s=getComputedStyle(document.documentElement);CC=s.getPropertyValue('--c').trim();CO=s.getPropertyValue('--o').trim()}cols();
+const sat=$('#sat'),rad=$('#rad'),sx=sat.getContext('2d'),rx=rad.getContext('2d'),dpr=Math.min(devicePixelRatio,2);
+function fit(c,h){const w=c.parentElement.clientWidth-28;c.width=w*dpr;c.height=h*dpr;c.style.height=h+'px'}
+function fitAll(){fit(sat,150);fit(rad,240)}addEventListener('resize',fitAll);fitAll();
+const blips=[...Array(7)].map((_,i)=>({a:Math.random()*6.28,r:.2+Math.random()*.7,o:i%2,l:0}));let sw=0,ang=0;
+const proj=(x,y,z,a,w,h)=>{const ca=Math.cos(a),sa=Math.sin(a),X=x*ca+z*sa,Z=-x*sa+z*ca,Y=y*.9-Z*.35,k=3/(3+Z*.5);return[w/2+X*k*h*.3,h/2+Y*k*h*.3]};
+function frame(){requestAnimationFrame(frame);ang+=RM?0:.012;sw+=RM?0:.03;
+  let w=sat.width,h=sat.height;sx.clearRect(0,0,w,h);sx.strokeStyle=CC;sx.lineWidth=1.4*dpr;sx.shadowColor=CC;sx.shadowBlur=8*dpr;
+  const N=10,ring=y=>{sx.beginPath();for(let i=0;i<=N;i++){const t=i/N*6.283,p=proj(Math.cos(t),y,Math.sin(t),ang,w,h);i?sx.lineTo(...p):sx.moveTo(...p)}sx.stroke()};
+  [-1.1,-.4,.3,1.1].forEach(ring);
+  for(let i=0;i<N;i++){const t=i/N*6.283,a=proj(Math.cos(t),-1.1,Math.sin(t),ang,w,h),b=proj(Math.cos(t),1.1,Math.sin(t),ang,w,h);sx.beginPath();sx.moveTo(...a);sx.lineTo(...b);sx.stroke()}
+  sx.strokeStyle=CO;const a1=proj(0,1.1,0,ang,w,h),a2=proj(0,2,0,ang,w,h);sx.beginPath();sx.moveTo(...a1);sx.lineTo(...a2);sx.stroke();sx.beginPath();sx.arc(a2[0],a2[1],3*dpr,0,6.283);sx.fillStyle=CO;sx.fill();
+  w=rad.width;h=rad.height;const R=Math.min(w,h)/2-6*dpr,cx=w/2,cy=h/2;rx.clearRect(0,0,w,h);rx.shadowBlur=0;rx.strokeStyle=CC;rx.globalAlpha=.4;rx.lineWidth=dpr;
+  for(let i=1;i<=4;i++){rx.beginPath();rx.arc(cx,cy,R*i/4,0,6.283);rx.stroke()}rx.beginPath();rx.moveTo(cx-R,cy);rx.lineTo(cx+R,cy);rx.moveTo(cx,cy-R);rx.lineTo(cx,cy+R);rx.stroke();
+  rx.globalAlpha=1;const g=rx.createConicGradient?rx.createConicGradient(sw-1.2,cx,cy):null;if(g){g.addColorStop(0,'transparent');g.addColorStop(.19,CC+'66');g.addColorStop(.2,'transparent');rx.fillStyle=g;rx.beginPath();rx.arc(cx,cy,R,0,6.283);rx.fill()}
+  rx.strokeStyle=CC;rx.lineWidth=2*dpr;rx.beginPath();rx.moveTo(cx,cy);rx.lineTo(cx+Math.cos(sw)*R,cy+Math.sin(sw)*R);rx.stroke();
+  blips.forEach(b=>{const d=((sw-b.a)%6.283+6.283)%6.283;if(d<.12)b.l=1;b.l=Math.max(0,b.l-.006);if(b.l>0){rx.globalAlpha=b.l;rx.fillStyle=b.o?CO:CC;rx.beginPath();rx.arc(cx+Math.cos(b.a)*R*b.r,cy+Math.sin(b.a)*R*b.r,4*dpr,0,6.283);rx.fill()}});rx.globalAlpha=1}
+frame();
+boot();
+</script>
+</body>
+</html>
